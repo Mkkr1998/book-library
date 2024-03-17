@@ -1,17 +1,13 @@
 package com.project.booklibrary.controller;
 
 
-import com.project.booklibrary.domain.entity.Author;
+import com.project.booklibrary.entity.Author;
 import com.project.booklibrary.service.AuthorService;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 public class AuthorController {
 
     private AuthorService service;
@@ -28,7 +24,7 @@ public class AuthorController {
         return service.findAll();
     }
 
-    @GetMapping("/author/{authId}")
+    @DeleteMapping("/author/{authId}")
     public void deleteAuthor(@PathVariable int authId){
         service.delete(authId);
     }

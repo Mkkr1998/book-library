@@ -1,9 +1,7 @@
 package com.project.booklibrary.controller;
 
-import com.project.booklibrary.domain.entity.Book;
-import com.project.booklibrary.repository.BookRepo;
+import com.project.booklibrary.entity.Book;
 import com.project.booklibrary.service.BookService;
-import jakarta.persistence.GeneratedValue;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,12 +26,12 @@ public class BookController {
     }
 
 
-    @GetMapping("/book/{bookId}")
+    @DeleteMapping("/book/{bookId}")
     public void deleteBook(@PathVariable("bookId") int bookId){
         service.deleteBook(bookId);
     }
 
-    @PostMapping("/book/{bookId}")
+    @PutMapping("/book/{bookId}")
     public Book updateBook(@PathVariable("bookId") int bookId,@RequestBody Book book){
         return service.update(bookId, book);
     }

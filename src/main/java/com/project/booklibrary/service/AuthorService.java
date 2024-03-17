@@ -1,6 +1,6 @@
 package com.project.booklibrary.service;
 
-import com.project.booklibrary.domain.entity.Author;
+import com.project.booklibrary.entity.Author;
 import com.project.booklibrary.repository.AuthorRepo;
 import org.springframework.stereotype.Service;
 
