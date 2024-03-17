@@ -20,7 +20,7 @@ public class BookController {
         return service.findAll();
     }
 
-    @PostMapping(path="/book")
+    @PutMapping(path="/book")
     public Book addBook(@RequestBody Book book){
         return service.addBook(book);
     }
