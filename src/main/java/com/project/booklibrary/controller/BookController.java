@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 public class BookController {
 
-    BookService service;
+    private BookService service;
 
     BookController(BookService service){
         this.service= service;
@@ -26,4 +26,16 @@ public class BookController {
     public Book addBook(@RequestBody Book book){
         return service.addBook(book);
     }
+
+
+    @GetMapping("/book/{bookId}")
+    public void deleteBook(@PathVariable("bookId") int bookId){
+        service.deleteBook(bookId);
+    }
+
+    @PostMapping("/book/{bookId}")
+    public Book updateBook(@PathVariable("bookId") int bookId,@RequestBody Book book){
+        return service.update(bookId, book);
+    }
+
 }
