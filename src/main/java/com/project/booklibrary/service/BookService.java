@@ -24,8 +24,8 @@ public class BookService {
 
     public Book update(int bookId,Book book){
         Book temp = repo.getReferenceById(bookId);
-        temp.setBookName(book.getBookName());
-        temp.setAuthor(book.getAuthor());
+        if(book.getBookName()!=null) temp.setBookName(book.getBookName());
+        if(book.getAuthor()!=null)temp.setAuthor(book.getAuthor());
         return repo.save(temp);
 
     }

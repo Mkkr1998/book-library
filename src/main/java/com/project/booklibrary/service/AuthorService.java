@@ -25,7 +25,8 @@ public class AuthorService {
     }
     public Author update(int authId,Author author){
         Author temp = repo.getReferenceById(authId);
-        temp.setAuthName(author.getAuthName());
+        if(author.getAuthName()!=null)temp.setAuthName(author.getAuthName());
+        if(author.getAuthAge()!=0) temp.setAuthAge(author.getAuthAge());
         return repo.save(temp);
     }
 

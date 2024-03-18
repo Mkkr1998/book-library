@@ -19,4 +19,7 @@ public class Author {
 
     @Column(nullable = false)
     String authName;
+
+    @Column
+    int authAge;
 }
